@@ -14,7 +14,7 @@ data = {
 }
 
 newActivityLink = f'{dbLink}/Atividades/.json'
-newActivityRequest= requests.post(newActivityLink, json.dump(data))
+newActivityRequest= requests.post(newActivityLink, data=json.dumps(data))
     ##CRIAR NOVA OPERADORA
 
 
@@ -29,3 +29,5 @@ newActivityRequest= requests.post(newActivityLink, json.dump(data))
 print(newActivityRequest)
 print(newActivityRequest.text)
 
+##SITES COM IDS EXCLUSIVOS
+    ##NA PASTA "SITES"
