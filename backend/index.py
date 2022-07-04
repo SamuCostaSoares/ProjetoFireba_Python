@@ -17,7 +17,6 @@ newActivityLink = f'{dbLink}/Atividades/.json'
 newActivityRequest= requests.post(newActivityLink, data=json.dumps(data))
     ##CRIAR NOVA OPERADORA
 
-
 ##GET
 
 ##PATCH
