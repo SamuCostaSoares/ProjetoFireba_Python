@@ -19,26 +19,16 @@ function App() {
     }
   }, [user]);
 
-  // componentDidMount (() => {
-  //   console.log("Estou nascendo")
-  // });
-
-  // componentDidUpdate (() => {
-  //   console.log("Estou atualizando")
-  // });
-
-  // componentDidUnmount (() => {
-  //   console.log("Estou morrendo, desmontando!")
-  // })
-
   if(!user) return <Login />
 
   if(loading) return <CircularIndeterminate />
 
   return (
     <div className="App">
-      <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} >
+      <AppHeader></AppHeader>
+      <AppSidebar></AppSidebar>
+      <Container maxWidth="md">
+        <Box sx={{ bgcolor: '#BEDDEF', height: '100vh' }} >
           <Typography variant="h1" component="div">Tela PRINCIPAL DO APP</Typography>
         </Box>
       </Container>
