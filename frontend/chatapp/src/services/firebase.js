@@ -1,4 +1,6 @@
-import {initializeApp} from "firebase/app";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 //todo Mask DB access key
 const firebaseConfig = {
@@ -13,4 +15,13 @@ const firebaseConfig = {
 
 //initialize app
 
-const app = initializeApp(firebaseConfig)
+
+const app = firebase.initializeApp(firebaseConfig);
+
+const db = app.firestore(); //creating connection
+
+const auth = app.auth();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
+export { db, auth, provider };
