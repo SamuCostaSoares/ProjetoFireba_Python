@@ -7,6 +7,7 @@ import Login from './components/Login/login';
 import { Container, Typography, Box, Grid, Paper } from "@mui/material";
 import checkValidUser from "./services/checkValidUser";
 import Header from "./components/Header/header";
+import Bottom from "./components/Bottom/bottom";
 
 function App() {
   const 
