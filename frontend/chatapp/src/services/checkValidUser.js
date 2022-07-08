@@ -8,7 +8,6 @@ export default async function checkValidUser (db, userEmail) {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         if(userEmail === doc.id){
-            alert(`O usuário tem permissão! ${userEmail}`);
             userAuthorized = true
         }
     })

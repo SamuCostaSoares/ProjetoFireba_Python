@@ -1,12 +1,12 @@
 import React, { useEffect, useState} from "react"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "./services/firebase";
-
 import './App.css';
 import CircularIndeterminate from './components/Loading/loading';
 import Login from './components/Login/login';
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, Grid, Paper } from "@mui/material";
 import checkValidUser from "./services/checkValidUser";
+import Header from "./components/Header/header";
 
 function App() {
   const 
@@ -33,21 +33,27 @@ function App() {
     })
   }, [user]);
 
-  console.log("userAuthorized state",userAuthorized);
   if(!user || !userAuthorized) return <Login />
 
   if(loading) return <CircularIndeterminate />
 
   return (
-    <div className="App">
-      {/* <AppHeader></AppHeader> */}
-      {/* <AppSidebar></AppSidebar> */}
-      <Container maxWidth="md">
-        <Box sx={{ bgcolor: '#BEDDEF', height: '100vh' }} >
-          <Typography variant="h1" component="div">Tela PRINCIPAL DO APP</Typography>
-        </Box>
-      </Container>
-    </div>
+    
+    <Container maxWidth="100%">
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Header/>
+        </Grid>
+        <Grid item xs={3}>
+        </Grid>
+        <Grid item xs={9}>
+          <Paper>PRINCIPAL</Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper>Bottom</Paper>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
