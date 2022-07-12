@@ -8,6 +8,7 @@ import { Container, Typography, Box, Grid, Paper } from "@mui/material";
 import checkValidUser from "./services/checkValidUser";
 import Header from "./components/Header/header";
 import Bottom from "./components/Bottom/bottom";
+import Sidebar from "./components/Sidebar/sidebar";
 
 function App() {
   const 
@@ -46,12 +47,13 @@ function App() {
           <Header/>
         </Grid>
         <Grid item xs={3}>
+          <Typography>CONTEUDO PRINCIPAL</Typography>
         </Grid>
         <Grid item xs={9}>
-          <Paper>PRINCIPAL</Paper>
+          <Sidebar />
         </Grid>
         <Grid item xs={12}>
-          <Paper>Bottom</Paper>
+          <Bottom />
         </Grid>
       </Grid>
     </Container>

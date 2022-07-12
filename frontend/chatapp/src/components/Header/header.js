@@ -57,7 +57,7 @@ export default function Header(){
                     right: 14,
                     width: 10,
                     height: 10,
-                    bgcolor: 'background.paper',
+                    bgcolor: '#900',
                     transform: 'translateY(-50%) rotate(45deg)',
                     zIndex: 0,
                     },
