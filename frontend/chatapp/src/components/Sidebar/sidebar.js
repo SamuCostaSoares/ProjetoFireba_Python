@@ -20,8 +20,7 @@ const itens = [
     "Projetos"
 ];
 
-export default function Sidebar() {
-    
+export default function Sidebar() {    
     return (
     <Box sx={{ display: 'flex' }}>
         <Drawer

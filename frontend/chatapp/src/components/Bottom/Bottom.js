@@ -1,4 +1,4 @@
-import React, {Bottom, useState} from "react";
+import React, {useState} from "react";
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -8,10 +8,10 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export default function SimpleBottomNavigation (){
     const 
-        [value, setValue] = React.useState(null);
+        [value, setValue] = useState(null);
 
   return (
-    <Box sx={{width: 300}}>
+    <Box sx={{width: '90%', position: 'fixed', bottom: 0}}>
       <BottomNavigation
         showLabels
         value={value}
