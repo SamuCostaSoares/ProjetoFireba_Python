@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {drawerWidth, useState} from "react";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
@@ -14,17 +14,53 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
+const itens = [
+    "Financeiro",
+    "Controle de Vistoria",
+    "Projetos"
+];
+
 export default function Sidebar() {
     
     return (
     <Box sx={{ display: 'flex' }}>
-        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-            <Toolbar>
-            <Typography variant="h6" noWrap component="div">
-                Test Sidebar
-            </Typography>
-        </Toolbar>
-        </AppBar>
+        <Drawer
+        variant="permanent"
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+        }}
+      >
+        <Toolbar />
+        <Box sx={{ overflow: 'auto' }}>
+          <List>
+            {itens.map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+          {/* <Divider /> */}
+          {/* <List>
+            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List> */}
+        </Box>
+      </Drawer>
     </Box>
     );
 }
